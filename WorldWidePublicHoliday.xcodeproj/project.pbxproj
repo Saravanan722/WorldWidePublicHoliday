@@ -1,0 +1,436 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		250D8A0929CC314700BAC807 /* Webservices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250D8A0829CC314700BAC807 /* Webservices.swift */; };
+		250F379E29C9ADCC00CC95A2 /* CountryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250F379D29C9ADCC00CC95A2 /* CountryScreen.swift */; };
+		250F37A029C9ADEF00CC95A2 /* CountryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250F379F29C9ADEF00CC95A2 /* CountryViewModel.swift */; };
+		250F37A329C9B99B00CC95A2 /* Constents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250F37A229C9B99B00CC95A2 /* Constents.swift */; };
+		25139E5329C99EE70000A82A /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25139E5229C99EE70000A82A /* Country.swift */; };
+		25139E5529C99F0F0000A82A /* Holiday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25139E5429C99F0F0000A82A /* Holiday.swift */; };
+		25293BA729C8BE1100C95C93 /* WorldWidePublicHolidayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25293BA629C8BE1100C95C93 /* WorldWidePublicHolidayApp.swift */; };
+		25293BA929C8BE1100C95C93 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25293BA829C8BE1100C95C93 /* ContentView.swift */; };
+		25293BAB29C8BE1300C95C93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25293BAA29C8BE1300C95C93 /* Assets.xcassets */; };
+		25293BAE29C8BE1300C95C93 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25293BAD29C8BE1300C95C93 /* Preview Assets.xcassets */; };
+		25293BBB29C8C2F600C95C93 /* HolidayScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25293BBA29C8C2F600C95C93 /* HolidayScreen.swift */; };
+		25293BBD29C8C31900C95C93 /* HolidayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25293BBC29C8C31900C95C93 /* HolidayViewModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		250D8A0829CC314700BAC807 /* Webservices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservices.swift; sourceTree = "<group>"; };
+		250F379D29C9ADCC00CC95A2 /* CountryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryScreen.swift; sourceTree = "<group>"; };
+		250F379F29C9ADEF00CC95A2 /* CountryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewModel.swift; sourceTree = "<group>"; };
+		250F37A229C9B99B00CC95A2 /* Constents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constents.swift; sourceTree = "<group>"; };
+		25139E5229C99EE70000A82A /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		25139E5429C99F0F0000A82A /* Holiday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Holiday.swift; sourceTree = "<group>"; };
+		25293BA329C8BE1100C95C93 /* WorldWidePublicHoliday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldWidePublicHoliday.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		25293BA629C8BE1100C95C93 /* WorldWidePublicHolidayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldWidePublicHolidayApp.swift; sourceTree = "<group>"; };
+		25293BA829C8BE1100C95C93 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		25293BAA29C8BE1300C95C93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		25293BAD29C8BE1300C95C93 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		25293BBA29C8C2F600C95C93 /* HolidayScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayScreen.swift; sourceTree = "<group>"; };
+		25293BBC29C8C31900C95C93 /* HolidayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayViewModel.swift; sourceTree = "<group>"; };
+		25A344C229CB916A002DCF74 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		25293BA029C8BE1100C95C93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		250D8A0729CC310600BAC807 /* WebServices */ = {
+			isa = PBXGroup;
+			children = (
+				250D8A0829CC314700BAC807 /* Webservices.swift */,
+			);
+			path = WebServices;
+			sourceTree = "<group>";
+		};
+		250F379B29C9AD5600CC95A2 /* HolidayModel */ = {
+			isa = PBXGroup;
+			children = (
+				25293BBA29C8C2F600C95C93 /* HolidayScreen.swift */,
+				25293BBC29C8C31900C95C93 /* HolidayViewModel.swift */,
+			);
+			path = HolidayModel;
+			sourceTree = "<group>";
+		};
+		250F379C29C9AD9600CC95A2 /* CountryModel */ = {
+			isa = PBXGroup;
+			children = (
+				250F379D29C9ADCC00CC95A2 /* CountryScreen.swift */,
+				250F379F29C9ADEF00CC95A2 /* CountryViewModel.swift */,
+			);
+			path = CountryModel;
+			sourceTree = "<group>";
+		};
+		250F37A129C9B96E00CC95A2 /* Comman */ = {
+			isa = PBXGroup;
+			children = (
+				250F37A229C9B99B00CC95A2 /* Constents.swift */,
+			);
+			path = Comman;
+			sourceTree = "<group>";
+		};
+		25139E5129C99E790000A82A /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				25139E5229C99EE70000A82A /* Country.swift */,
+				25139E5429C99F0F0000A82A /* Holiday.swift */,
+			);
+			path = DTOs;
+			sourceTree = "<group>";
+		};
+		25293B9A29C8BE1100C95C93 = {
+			isa = PBXGroup;
+			children = (
+				25A344C229CB916A002DCF74 /* MyPlayground.playground */,
+				25293BA529C8BE1100C95C93 /* WorldWidePublicHoliday */,
+				25293BA429C8BE1100C95C93 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		25293BA429C8BE1100C95C93 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				25293BA329C8BE1100C95C93 /* WorldWidePublicHoliday.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		25293BA529C8BE1100C95C93 /* WorldWidePublicHoliday */ = {
+			isa = PBXGroup;
+			children = (
+				250D8A0729CC310600BAC807 /* WebServices */,
+				250F37A129C9B96E00CC95A2 /* Comman */,
+				25139E5129C99E790000A82A /* DTOs */,
+				25293BB529C8BE4700C95C93 /* Module */,
+				25293BA629C8BE1100C95C93 /* WorldWidePublicHolidayApp.swift */,
+				25293BA829C8BE1100C95C93 /* ContentView.swift */,
+				25293BAA29C8BE1300C95C93 /* Assets.xcassets */,
+				25293BAC29C8BE1300C95C93 /* Preview Content */,
+			);
+			path = WorldWidePublicHoliday;
+			sourceTree = "<group>";
+		};
+		25293BAC29C8BE1300C95C93 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				25293BAD29C8BE1300C95C93 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		25293BB529C8BE4700C95C93 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				250F379C29C9AD9600CC95A2 /* CountryModel */,
+				250F379B29C9AD5600CC95A2 /* HolidayModel */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		25293BA229C8BE1100C95C93 /* WorldWidePublicHoliday */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 25293BB129C8BE1300C95C93 /* Build configuration list for PBXNativeTarget "WorldWidePublicHoliday" */;
+			buildPhases = (
+				25293B9F29C8BE1100C95C93 /* Sources */,
+				25293BA029C8BE1100C95C93 /* Frameworks */,
+				25293BA129C8BE1100C95C93 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WorldWidePublicHoliday;
+			productName = WorldWidePublicHoliday;
+			productReference = 25293BA329C8BE1100C95C93 /* WorldWidePublicHoliday.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		25293B9B29C8BE1100C95C93 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					25293BA229C8BE1100C95C93 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 25293B9E29C8BE1100C95C93 /* Build configuration list for PBXProject "WorldWidePublicHoliday" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 25293B9A29C8BE1100C95C93;
+			productRefGroup = 25293BA429C8BE1100C95C93 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				25293BA229C8BE1100C95C93 /* WorldWidePublicHoliday */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		25293BA129C8BE1100C95C93 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				25293BAE29C8BE1300C95C93 /* Preview Assets.xcassets in Resources */,
+				25293BAB29C8BE1300C95C93 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		25293B9F29C8BE1100C95C93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				250D8A0929CC314700BAC807 /* Webservices.swift in Sources */,
+				25293BBB29C8C2F600C95C93 /* HolidayScreen.swift in Sources */,
+				25293BA929C8BE1100C95C93 /* ContentView.swift in Sources */,
+				250F379E29C9ADCC00CC95A2 /* CountryScreen.swift in Sources */,
+				250F37A029C9ADEF00CC95A2 /* CountryViewModel.swift in Sources */,
+				25293BA729C8BE1100C95C93 /* WorldWidePublicHolidayApp.swift in Sources */,
+				25139E5329C99EE70000A82A /* Country.swift in Sources */,
+				25139E5529C99F0F0000A82A /* Holiday.swift in Sources */,
+				25293BBD29C8C31900C95C93 /* HolidayViewModel.swift in Sources */,
+				250F37A329C9B99B00CC95A2 /* Constents.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		25293BAF29C8BE1300C95C93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		25293BB029C8BE1300C95C93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		25293BB229C8BE1300C95C93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WorldWidePublicHoliday/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = LGHX4255P5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = com.stn.todo;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stn.todo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "todo dev";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		25293BB329C8BE1300C95C93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WorldWidePublicHoliday/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = LGHX4255P5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = com.stn.todo;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stn.todo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "todo dev";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		25293B9E29C8BE1100C95C93 /* Build configuration list for PBXProject "WorldWidePublicHoliday" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25293BAF29C8BE1300C95C93 /* Debug */,
+				25293BB029C8BE1300C95C93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		25293BB129C8BE1300C95C93 /* Build configuration list for PBXNativeTarget "WorldWidePublicHoliday" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25293BB229C8BE1300C95C93 /* Debug */,
+				25293BB329C8BE1300C95C93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 25293B9B29C8BE1100C95C93 /* Project object */;
+}
