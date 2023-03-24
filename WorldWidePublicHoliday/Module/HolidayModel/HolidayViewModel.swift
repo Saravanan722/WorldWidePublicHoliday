@@ -8,6 +8,7 @@
 import Foundation
 
 class HolidayViewModel: ObservableObject {
+    var countryVM = CountryViewModel()
     @Published var resultHoliday: [HolidayResponse] = []
     var filterHoliday: [HolidayResponse] {
         return resultHoliday.filter { compareDate(date: $0.date) }
@@ -24,7 +25,7 @@ class HolidayViewModel: ObservableObject {
     }()
     
     func holidayData() {
-        guard let url = URL(string:Constants.baseUrl) else { fatalError("Missing URL")
+        guard let url = URL(string:"https://date.nager.at/api/v3/PublicHolidays/2023/AT") else { fatalError("Missing URL")
         }
         let request = URLRequest(url: url)
         URLSession.shared.dataTask(with: request) { data, response, error in

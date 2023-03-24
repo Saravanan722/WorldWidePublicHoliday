@@ -8,22 +8,41 @@
 import SwiftUI
 
 struct HolidayScreen: View {
+    
     @ObservedObject var viewModel: HolidayViewModel
+    
     var body: some View {
         VStack {
             HStack {
-                DatePicker("Start : ",selection: $viewModel.startDate, in: ...Date.now, displayedComponents: .date)
-                DatePicker("End : ", selection: $viewModel.endDate, in: ...Date.now, displayedComponents: .date)
+                DatePicker("Start : ",selection: $viewModel.startDate, in: viewModel.dateRange, displayedComponents: .date)
+                DatePicker("End : ", selection: $viewModel.endDate, in: viewModel.dateRange, displayedComponents: .date)
             }
             ZStack{
                 List {
-                    ForEach(viewModel.filterHoliday, id: \.date) { date in
-                        Text("CountryName : \(date.name)")
-                        Text("Holiday : \(date.localName)")
-                        Text("Date : \(date.date)")
-                        
+                    ForEach(viewModel.filterHoliday, id: \.date) { holiday in
+                        Text("Country Name :")
+                            .foregroundColor(.black)
+                        +
+                        Text("#############")
+                            .foregroundColor(.blue)
+                        Text("Country Code :")
+                            .foregroundColor(.black)
+                        +
+                        Text(" \(holiday.countryCode)")
+                            .foregroundColor(.blue)
+                        Text("Holiday :")
+                            .foregroundColor(.black)
+                        + Text(" \(holiday.name)")
+                            .foregroundColor(.blue)
+                        Text("Local Name :")
+                            .foregroundColor(.black)
+                        + Text(" \(holiday.localName)")
+                            .foregroundColor(.blue)
+                        Text("Date :")
+                            .foregroundColor(.black)
+                        + Text(" \(holiday.date)")
+                            .foregroundColor(.blue)
                     }
-                    .foregroundColor(.blue)
                 }
                 .background(Color.purple)
             }

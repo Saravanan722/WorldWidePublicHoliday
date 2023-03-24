@@ -8,6 +8,6 @@
 import Foundation
 
 struct Constants {
-    static let baseUrl = "https://date.nager.at/api/v3/PublicHolidays/2023/AT"
+    static let baseUrl = "https://date.nager.at/api/v3/PublicHolidays/2023/"
     
 }

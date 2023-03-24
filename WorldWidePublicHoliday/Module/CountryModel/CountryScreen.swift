@@ -9,23 +9,21 @@ import SwiftUI
 
 struct CountryScreen: View {
     @ObservedObject var viewModel: CountryViewModel
-    @State var searchCountryCode = ""
-    @State var countryName = ""
     var placeholder = "Select Country"
     var body: some View {
         VStack {
             Menu {
                 ForEach(viewModel.countryResult ,id: \.name){ country in
                     Button(country.countryCode) {
-                        self.searchCountryCode = country.countryCode
-                        self.countryName = country.name
+                        viewModel.searchCountryCode = country.countryCode
+                        viewModel.countryName = country.name
                     }
                 }
             } label: {
                 VStack(spacing: 5) {
                     HStack{
-                        Text(searchCountryCode.isEmpty ? placeholder :searchCountryCode)
-                            .foregroundColor(searchCountryCode.isEmpty ? .gray : .black)
+                        Text(viewModel.searchCountryCode.isEmpty ? placeholder :viewModel.searchCountryCode)
+                            .foregroundColor(viewModel.searchCountryCode.isEmpty ? .gray : .black)
                         Spacer()
                         Image(systemName: "chevron.down")
                             .foregroundColor(Color.orange)
