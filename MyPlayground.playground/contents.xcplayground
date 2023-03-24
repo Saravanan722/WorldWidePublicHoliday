@@ -3,5 +3,6 @@
     <pages>
         <page name='ArrayDemo'/>
         <page name='Learning'/>
+        <page name='Complete Guide to a Data Flow in SwiftUI'/>
     </pages>
 </playground>

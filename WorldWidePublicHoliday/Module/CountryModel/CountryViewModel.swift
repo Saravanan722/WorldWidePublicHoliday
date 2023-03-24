@@ -10,9 +10,8 @@ import Foundation
 
 class CountryViewModel: ObservableObject {
     @Published var countryResult : [CountryResponse] = []
-    @Published var sortAscending: Bool = true
-    @Published var search = ""
     @Published var searchCountryCode = ""
+    @Published var search = ""
     @Published var countryName = ""
     var startDate = Date()
     let dateRange: ClosedRange<Date> = {
@@ -25,9 +24,10 @@ class CountryViewModel: ObservableObject {
     }()
     
     var country: [String] {
-        let isCountry = countryResult.map { $0.name.lowercased() }
-        return search == "" ? isCountry : isCountry.filter { $0.contains(search.lowercased()) }
+        let isCountry = countryResult.map { $0.name }
+        return search == "" ? isCountry : isCountry.filter { $0.contains(search) }
     }
+    
     func countryData() {
         guard let url = URL(string: "https://date.nager.at/api/v3/AvailableCountries") else { fatalError("Missing URL")}
         let request = URLRequest(url: url)
@@ -51,16 +51,7 @@ class CountryViewModel: ObservableObject {
             }
         }.resume()
     }
-    
-    func sortCountryName() {
-        countryResult.sort { h1, h2 in
-            if sortAscending {
-                return h1.name < h2.name
-            } else {
-                return h1.name > h2.name
-            }
-        }
-    }
+
     func getYear() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy"

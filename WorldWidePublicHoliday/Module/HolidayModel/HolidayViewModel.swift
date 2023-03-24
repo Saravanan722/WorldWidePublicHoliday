@@ -8,7 +8,7 @@
 import Foundation
 
 class HolidayViewModel: ObservableObject {
-    var countryVM = CountryViewModel()
+    @Published var getCountryCode = ""
     @Published var resultHoliday: [HolidayResponse] = []
     var filterHoliday: [HolidayResponse] {
         return resultHoliday.filter { compareDate(date: $0.date) }
@@ -24,35 +24,65 @@ class HolidayViewModel: ObservableObject {
         calendar.date(from:endComponents)!
     }()
     
-    func holidayData() {
-        guard let url = URL(string:"https://date.nager.at/api/v3/PublicHolidays/2023/AT") else { fatalError("Missing URL")
-        }
-        let request = URLRequest(url: url)
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
-            if let data = data {
-                do {
-                    let decoder = JSONDecoder()
-                    let dateFormat = DateFormatter()
-                    dateFormat.dateFormat = "yyyy-MM-dd"
-                    decoder.dateDecodingStrategy = .formatted(dateFormat)
-                    let result = try decoder.decode([HolidayResponse].self, from: data)
-                    DispatchQueue.main.async {
-                        self.resultHoliday = result
-                    }
-                } catch let error {
-                    print(error)
-                }
-            }
-        }.resume()
-    }
     
+    func holidayData(countyCode: String? = nil) {
+        if (countyCode == nil) {
+            guard let url = URL(string:"https://date.nager.at/api/v3/PublicHolidays/2023/AT") else { fatalError("Missing URL")
+            }
+            let request = URLRequest(url: url)
+            URLSession.shared.dataTask(with: request) { data, response, error in
+                if let error = error {
+                    print(error.localizedDescription)
+                    return
+                }
+                if let data = data {
+                    do {
+                        let decoder = JSONDecoder()
+                        let dateFormat = DateFormatter()
+                        dateFormat.dateFormat = "yyyy-MM-dd"
+                        decoder.dateDecodingStrategy = .formatted(dateFormat)
+                        let result = try decoder.decode([HolidayResponse].self, from: data)
+                        DispatchQueue.main.async {
+                            self.resultHoliday = result
+                        }
+                    } catch let error {
+                        print(error)
+                    }
+                }
+            }.resume()
+        } else {
+            guard let url = URL(string:"https://date.nager.at/api/v3/PublicHolidays/2023/\(countyCode!)") else { fatalError("Missing URL")
+            }
+            let request = URLRequest(url: url)
+            URLSession.shared.dataTask(with: request) { data, response, error in
+                if let error = error {
+                    print(error.localizedDescription)
+                    return
+                }
+                if let data = data {
+                    do {
+                        let decoder = JSONDecoder()
+                        let dateFormat = DateFormatter()
+                        dateFormat.dateFormat = "yyyy-MM-dd"
+                        decoder.dateDecodingStrategy = .formatted(dateFormat)
+                        let result = try decoder.decode([HolidayResponse].self, from: data)
+                        DispatchQueue.main.async {
+                            self.resultHoliday = result
+                        }
+                    } catch let error {
+                        print(error)
+                    }
+                }
+            }.resume()
+        }
+    }
     
     func compareDate(date : Date) -> Bool {
         date >= startDate && date <= endDate
+    }
+    
+    func dateFilter() -> [HolidayResponse] {
+            return resultHoliday.filter { compareDate(date: $0.date) }
     }
 }
 

@@ -11,7 +11,8 @@ import SwiftUI
 struct WorldWidePublicHolidayApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(viewVM: CountryViewModel(), viewModel: HolidayViewModel())
         }
     }
 }
+

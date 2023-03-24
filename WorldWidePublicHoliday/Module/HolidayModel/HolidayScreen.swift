@@ -8,23 +8,35 @@
 import SwiftUI
 
 struct HolidayScreen: View {
-    
+    @State var updateSearch = true
     @ObservedObject var viewModel: HolidayViewModel
-    
     var body: some View {
         VStack {
             HStack {
-                DatePicker("Start : ",selection: $viewModel.startDate, in: viewModel.dateRange, displayedComponents: .date)
-                DatePicker("End : ", selection: $viewModel.endDate, in: viewModel.dateRange, displayedComponents: .date)
+                DatePicker("From Date : ",selection: $viewModel.startDate, in: viewModel.dateRange, displayedComponents: .date)
+                DatePicker("End Date: ", selection: $viewModel.endDate, in: viewModel.dateRange, displayedComponents: .date)
             }
-            ZStack{
+                Button(action: {
+                    print("Button action")
+                }) {
+                    Text("Update Search")
+                        .padding(10.0)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10.0)
+                                .stroke(lineWidth: 2.0)
+                                .shadow(color: .blue, radius: 10.0)
+                                .frame(minWidth: 0,maxWidth: .infinity)
+                        )
+                }
+            .cornerRadius(4)
                 List {
-                    ForEach(viewModel.filterHoliday, id: \.date) { holiday in
+                    ForEach(viewModel.resultHoliday, id: \.date) { holiday in
                         Text("Country Name :")
                             .foregroundColor(.black)
                         +
                         Text("#############")
                             .foregroundColor(.blue)
+                        
                         Text("Country Code :")
                             .foregroundColor(.black)
                         +
@@ -45,9 +57,10 @@ struct HolidayScreen: View {
                     }
                 }
                 .background(Color.purple)
-            }
         }
-        .onAppear(perform: viewModel.holidayData)
+        .onAppear {
+            viewModel.holidayData()
+        }
     }
 }
 
