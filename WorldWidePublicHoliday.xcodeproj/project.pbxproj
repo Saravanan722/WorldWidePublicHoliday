@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		250D8A0929CC314700BAC807 /* Webservices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250D8A0829CC314700BAC807 /* Webservices.swift */; };
-		250F379E29C9ADCC00CC95A2 /* CountryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250F379D29C9ADCC00CC95A2 /* CountryScreen.swift */; };
 		250F37A029C9ADEF00CC95A2 /* CountryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250F379F29C9ADEF00CC95A2 /* CountryViewModel.swift */; };
 		250F37A329C9B99B00CC95A2 /* Constents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 250F37A229C9B99B00CC95A2 /* Constents.swift */; };
 		25139E5329C99EE70000A82A /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25139E5229C99EE70000A82A /* Country.swift */; };
@@ -17,13 +16,11 @@
 		25293BA929C8BE1100C95C93 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25293BA829C8BE1100C95C93 /* ContentView.swift */; };
 		25293BAB29C8BE1300C95C93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25293BAA29C8BE1300C95C93 /* Assets.xcassets */; };
 		25293BAE29C8BE1300C95C93 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25293BAD29C8BE1300C95C93 /* Preview Assets.xcassets */; };
-		25293BBB29C8C2F600C95C93 /* HolidayScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25293BBA29C8C2F600C95C93 /* HolidayScreen.swift */; };
 		25293BBD29C8C31900C95C93 /* HolidayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25293BBC29C8C31900C95C93 /* HolidayViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		250D8A0829CC314700BAC807 /* Webservices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservices.swift; sourceTree = "<group>"; };
-		250F379D29C9ADCC00CC95A2 /* CountryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryScreen.swift; sourceTree = "<group>"; };
 		250F379F29C9ADEF00CC95A2 /* CountryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewModel.swift; sourceTree = "<group>"; };
 		250F37A229C9B99B00CC95A2 /* Constents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constents.swift; sourceTree = "<group>"; };
 		25139E5229C99EE70000A82A /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
@@ -33,7 +30,6 @@
 		25293BA829C8BE1100C95C93 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		25293BAA29C8BE1300C95C93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		25293BAD29C8BE1300C95C93 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		25293BBA29C8C2F600C95C93 /* HolidayScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayScreen.swift; sourceTree = "<group>"; };
 		25293BBC29C8C31900C95C93 /* HolidayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolidayViewModel.swift; sourceTree = "<group>"; };
 		25A344C229CB916A002DCF74 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
@@ -60,7 +56,6 @@
 		250F379B29C9AD5600CC95A2 /* HolidayModel */ = {
 			isa = PBXGroup;
 			children = (
-				25293BBA29C8C2F600C95C93 /* HolidayScreen.swift */,
 				25293BBC29C8C31900C95C93 /* HolidayViewModel.swift */,
 			);
 			path = HolidayModel;
@@ -69,7 +64,6 @@
 		250F379C29C9AD9600CC95A2 /* CountryModel */ = {
 			isa = PBXGroup;
 			children = (
-				250F379D29C9ADCC00CC95A2 /* CountryScreen.swift */,
 				250F379F29C9ADEF00CC95A2 /* CountryViewModel.swift */,
 			);
 			path = CountryModel;
@@ -212,9 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				250D8A0929CC314700BAC807 /* Webservices.swift in Sources */,
-				25293BBB29C8C2F600C95C93 /* HolidayScreen.swift in Sources */,
 				25293BA929C8BE1100C95C93 /* ContentView.swift in Sources */,
-				250F379E29C9ADCC00CC95A2 /* CountryScreen.swift in Sources */,
 				250F37A029C9ADEF00CC95A2 /* CountryViewModel.swift in Sources */,
 				25293BA729C8BE1100C95C93 /* WorldWidePublicHolidayApp.swift in Sources */,
 				25139E5329C99EE70000A82A /* Country.swift in Sources */,
