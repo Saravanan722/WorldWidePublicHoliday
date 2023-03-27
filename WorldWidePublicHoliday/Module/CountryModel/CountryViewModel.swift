@@ -31,8 +31,10 @@ class CountryViewModel: ObservableObject {
     func countryData() {
         guard let url = URL(string: "https://date.nager.at/api/v3/AvailableCountries") else { fatalError("Missing URL")}
         let request = URLRequest(url: url)
+        let defaultConfiguration = URLSessionConfiguration.ephemeral
+        let urlSession = URLSession(configuration: defaultConfiguration)
         
-        URLSession.shared.dataTask(with: request) { data, response, error in
+        urlSession.dataTask(with: request) { data, response, error in
             
             if let error = error {
                 print(error.localizedDescription)
@@ -44,6 +46,7 @@ class CountryViewModel: ObservableObject {
                     let result = try JSONDecoder().decode([CountryResponse].self, from: data)
                     DispatchQueue.main.async {
                         self.countryResult = result
+                        print("County Data call onApper")
                     }
                 } catch let error {
                     print(error)

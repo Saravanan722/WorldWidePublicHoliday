@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     @ObservedObject var viewVM: CountryViewModel
     @State var filterHoliday: [HolidayResponse] = []
     
@@ -51,6 +52,7 @@ struct ContentView: View {
         }) {
             Text("Update Search")
                 .padding(10.0)
+                .foregroundColor(.black)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10.0)
                         .stroke(lineWidth: 2.0)
@@ -59,6 +61,23 @@ struct ContentView: View {
                 )
         }
         .cornerRadius(4)
+        
+//        HStack {
+//            Text("Sort Order: ")
+//            Picker(selection: $viewModel.sortOrder, label: Text("")) {
+//                Text("Ascending").tag(HolidayViewModel.SortOrder.ascending)
+//                Text("Descending").tag(HolidayViewModel.SortOrder.descending)
+//            }
+//            .pickerStyle(SegmentedPickerStyle())
+//
+//        }
+//
+//        List( viewModel.resultHoliday, id: \.date) { country in
+//            Text("\(country.name)")
+//        }
+//        .onAppear {
+//            viewModel.sortCountries()
+//        }
         
         List {
             ForEach(filterHoliday, id: \.date) { holiday in
@@ -94,9 +113,12 @@ struct ContentView: View {
         .background(Color.purple)
         .onReceive(viewModel.$getCountryCode, perform: { publisher in
             viewModel.holidayData(countyCode: publisher)
+            print("onRecive method call to action")
             
         })
-        .onAppear(perform: { viewModel.holidayData() })
+        .onAppear(perform: { viewModel.holidayData()
+            print("Holiday data method holiday() call")
+        })
         
     }
 }

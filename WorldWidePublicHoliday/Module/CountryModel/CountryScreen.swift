@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CountryScreen: View {
+//struct CountryScreen: View {
     //    enum SortOrder {
     //        case ascending
     //        case descending
@@ -16,39 +16,39 @@ struct CountryScreen: View {
     //    @State private var Result : [String] = ["A","B","C","D","E","F","G","H"]
     //    @State private var isToggle : Bool = false
     
-    @ObservedObject var viewModel: CountryViewModel
-    var placeholder = "Select Country"
-    var body: some View {
-        ScrollView{
-            VStack{
-                Menu {
-                    ForEach(viewModel.countryResult ,id: \.name){ country in
-                        Button(country.name) {
-                            viewModel.searchCountryCode = country.countryCode
-                            viewModel.countryName = country.name
-                        }
-                    }
-                } label: {
-                    VStack(spacing: 5) {
-                        HStack{
-                            Text(viewModel.searchCountryCode.isEmpty ? placeholder:viewModel.searchCountryCode)
-                                .foregroundColor(viewModel.searchCountryCode.isEmpty ? .gray : .black)
-                            Spacer()
-                            Image(systemName: "chevron.down")
-                                .foregroundColor(Color.orange)
-                                .font(Font.system(size: 20, weight: .bold))
-                        }
-                        .padding(.horizontal)
-                        Rectangle()
-                            .border(.orange)
-                            .frame(height: 2)
-                    }
-                }
-                .onAppear(perform: viewModel.countryData)
-            }
-        }
-    }
-}
+//    @ObservedObject var viewModel: CountryViewModel
+//    var placeholder = "Select Country"
+//    var body: some View {
+//        ScrollView{
+//            VStack{
+//                Menu {
+//                    ForEach(viewModel.countryResult ,id: \.name){ country in
+//                        Button(country.name) {
+//                            viewModel.searchCountryCode = country.countryCode
+//                            viewModel.countryName = country.name
+//                        }
+//                    }
+//                } label: {
+//                    VStack(spacing: 5) {
+//                        HStack{
+//                            Text(viewModel.searchCountryCode.isEmpty ? placeholder:viewModel.searchCountryCode)
+//                                .foregroundColor(viewModel.searchCountryCode.isEmpty ? .gray : .black)
+//                            Spacer()
+//                            Image(systemName: "chevron.down")
+//                                .foregroundColor(Color.orange)
+//                                .font(Font.system(size: 20, weight: .bold))
+//                        }
+//                        .padding(.horizontal)
+//                        Rectangle()
+//                            .border(.orange)
+//                            .frame(height: 2)
+//                    }
+//                }
+//                .onAppear(perform: viewModel.countryData)
+//            }
+//        }
+//    }
+//}
 //            NavigationView {
 //                List {
 //                    ForEach(viewModel.country, id: \.self) { names in
@@ -86,8 +86,8 @@ struct CountryScreen: View {
 //}
 
 
-struct CountryScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        CountryScreen(viewModel: CountryViewModel())
-    }
-}
+//struct CountryScreen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CountryScreen(viewModel: CountryViewModel())
+//    }
+//}

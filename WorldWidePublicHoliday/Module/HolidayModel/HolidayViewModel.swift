@@ -8,6 +8,13 @@
 import Foundation
 
 class HolidayViewModel: ObservableObject {
+    
+    enum SortOrder {
+            case ascending
+            case descending
+        }
+    @Published var sortOrder: SortOrder = .descending
+    
     @Published var getCountryCode = ""
     @Published var resultHoliday: [HolidayResponse] = []
     var filterHoliday: [HolidayResponse] {
@@ -82,7 +89,15 @@ class HolidayViewModel: ObservableObject {
     }
     
     func dateFilter() -> [HolidayResponse] {
-            return resultHoliday.filter { compareDate(date: $0.date) }
+        return resultHoliday.filter { compareDate(date: $0.date) }
+    }
+    func sortCountries() {
+        switch sortOrder {
+        case .ascending:
+            resultHoliday = resultHoliday.sorted { $0.name < $1.name}
+        case .descending:
+            resultHoliday = resultHoliday.sorted { $0.name > $1.name }
+        }
     }
 }
 
