@@ -9,13 +9,8 @@ import Foundation
 
 class HolidayViewModel: ObservableObject {
     
-    enum SortOrder {
-            case ascending
-            case descending
-        }
-    @Published var sortOrder: SortOrder = .descending
-    
-    @Published var getCountryCode = ""
+    @Published var getCountryCode: String = ""
+    @Published var getYear: String = ""
     @Published var resultHoliday: [HolidayResponse] = []
     var filterHoliday: [HolidayResponse] {
         return resultHoliday.filter { compareDate(date: $0.date) }
@@ -31,10 +26,9 @@ class HolidayViewModel: ObservableObject {
         calendar.date(from:endComponents)!
     }()
     
-    
-    func holidayData(countyCode: String? = nil) {
-        if (countyCode == nil) {
-            guard let url = URL(string:"https://date.nager.at/api/v3/PublicHolidays/2023/AT") else { fatalError("Missing URL")
+    func holidayData(years: String? = nil, countyCode: String? = nil) {
+        if (countyCode == nil && years == nil) {
+            guard let url = URL(string: Constants.baseUrl) else { fatalError("Missing URL")
             }
             let request = URLRequest(url: url)
             URLSession.shared.dataTask(with: request) { data, response, error in
@@ -58,7 +52,7 @@ class HolidayViewModel: ObservableObject {
                 }
             }.resume()
         } else {
-            guard let url = URL(string:"https://date.nager.at/api/v3/PublicHolidays/2023/\(countyCode!)") else { fatalError("Missing URL")
+            guard let url = URL(string:"https://date.nager.at/api/v3/PublicHolidays/\(years!)/\(countyCode!)") else { fatalError("Missing URL")
             }
             let request = URLRequest(url: url)
             URLSession.shared.dataTask(with: request) { data, response, error in
@@ -90,14 +84,6 @@ class HolidayViewModel: ObservableObject {
     
     func dateFilter() -> [HolidayResponse] {
         return resultHoliday.filter { compareDate(date: $0.date) }
-    }
-    func sortCountries() {
-        switch sortOrder {
-        case .ascending:
-            resultHoliday = resultHoliday.sorted { $0.name < $1.name}
-        case .descending:
-            resultHoliday = resultHoliday.sorted { $0.name > $1.name }
-        }
     }
 }
 

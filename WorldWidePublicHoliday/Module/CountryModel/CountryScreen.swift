@@ -91,3 +91,17 @@ import SwiftUI
 //        CountryScreen(viewModel: CountryViewModel())
 //    }
 //}
+//func getYear() -> String {
+//    let dateFormatter = DateFormatter()
+//    dateFormatter.dateFormat = "yyyy"
+//    return dateFormatter.string(from: startDate)
+//}
+//var startDate = Date()
+//let dateRange: ClosedRange<Date> = {
+//    let calendar = Calendar.current
+//    let startComponents = DateComponents(year: 2000)
+//    let endComponents = DateComponents(year: 2030)
+//    return calendar.date(from:startComponents)!
+//    ...
+//    calendar.date(from:endComponents)!
+//}()

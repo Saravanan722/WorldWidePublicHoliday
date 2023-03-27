@@ -9,20 +9,11 @@ import Foundation
 
 
 class CountryViewModel: ObservableObject {
+    
     @Published var countryResult : [CountryResponse] = []
     @Published var searchCountryCode = ""
     @Published var search = ""
     @Published var countryName = ""
-    var startDate = Date()
-    let dateRange: ClosedRange<Date> = {
-        let calendar = Calendar.current
-        let startComponents = DateComponents(year: 2000)
-        let endComponents = DateComponents(year: 2030)
-        return calendar.date(from:startComponents)!
-        ...
-        calendar.date(from:endComponents)!
-    }()
-    
     var country: [String] {
         let isCountry = countryResult.map { $0.name }
         return search == "" ? isCountry : isCountry.filter { $0.contains(search) }
@@ -53,12 +44,6 @@ class CountryViewModel: ObservableObject {
                 }
             }
         }.resume()
-    }
-
-    func getYear() -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy"
-        return dateFormatter.string(from: startDate)
     }
     
 }

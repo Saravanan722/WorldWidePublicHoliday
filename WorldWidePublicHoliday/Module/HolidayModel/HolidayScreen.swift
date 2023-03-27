@@ -69,3 +69,18 @@ import SwiftUI
 //        HolidayScreen(viewModel: HolidayViewModel())
 //    }
 //}
+
+//func sortCountries() {
+//    switch sortOrder {
+//    case .ascending:
+//        resultHoliday = resultHoliday.sorted { $0.name < $1.name}
+//    case .descending:
+//        resultHoliday = resultHoliday.sorted { $0.name > $1.name }
+//    }
+//}
+//enum SortOrder {
+//    case ascending
+//    case descending
+//}
+//@Published var sortOrder: SortOrder = .descending
+
