@@ -9,9 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var viewVM: CountryViewModel
-    @State var isSelectCountryCode = ""
-    @State var filterHoliday: [HolidayResponse] = []
-    @State var selection = Date()
+    @State var selectCountryCode = ""
+    let gradient = Gradient(colors: [.purple, .blue])
+    let gradientBackround = Gradient(colors: [.white, .white])
     @ObservedObject var viewModel: HolidayViewModel
     var placeholder = "Select Country"
     var year = "Select Year"
@@ -24,69 +24,73 @@ struct ContentView: View {
                             viewModel.getCountryCode = country.countryCode
                             viewVM.countryName = country.name
                         }
-                        .padding()
-                        .padding(.horizontal)
-                        Rectangle()
-                            .border(.red)
-                            .frame(height: 2)
-                        
                     }
-                    
                 } label: {
                     VStack(spacing: 5) {
-                        HStack{
+                        HStack {
                             Text(viewVM.countryName.isEmpty ? placeholder:viewVM.countryName)
                                 .foregroundColor(viewVM.countryName.isEmpty ? .gray : .black)
-                                .frame(width: 150, height: 40, alignment: .trailing)
+                                .frame(height: 30)
                             
                             Spacer()
                             Image(systemName: "chevron.down")
-                                .foregroundColor(Color.orange)
+                                .foregroundColor(Color.gray)
                                 .font(Font.system(size: 20, weight: .bold))
-                            // .frame(width: 50, height: 40, alignment:.trailing)
                         }
-                        .padding()
-                        
+                        .padding(10.0)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10.0)
+                                .stroke(lineWidth: 2.0)
+                                .shadow(color: .brown, radius: 10.0)
+                                .frame(minWidth: 0,maxWidth: .infinity)
+                        )
                     }
-                    
+                    .background(.linearGradient(gradientBackround, startPoint: .leading, endPoint: .trailing))
+
                 }
                 Menu {
                     ForEach(2000...2030, id: \.self) { year in
-                        Button("\(year)") {
-                            viewModel.getYear = "\(year)"
+                        Button(String(year)) {
+                            viewModel.getYear = year
                         }
-                        .padding()
                     }
                 } label: {
                     VStack(spacing: 5) {
-                        HStack{
-                            Picker("", selection: $selection) {
-                                
-                            }
-                            .frame(width: 50, height: 40, alignment: .leading)
-                            .pickerStyle(InlinePickerStyle())
-                            Spacer()
-                            Text(viewModel.getYear.isEmpty ? year: viewModel.getYear  )
-                                .foregroundColor(viewModel.getYear.isEmpty ? .gray : .black)
-                                .frame(width: 150, height: 40, alignment:.leading)
+                        HStack {
+                            Text(String(viewModel.getYear))
+                                .foregroundColor(.black)
+                                .frame(height: 30)
                             
+                            Image(systemName: "chevron.down")
+                                .foregroundColor(Color.gray)
+                                .font(Font.system(size: 20, weight: .bold))
                             
                         }
+                        .padding(10.0)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10.0)
+                                .stroke(lineWidth: 2.0)
+                                .shadow(color: .brown, radius: 10.0)
+                                .frame(minWidth: 0,maxWidth: .infinity)
+                        )
                     }
+                    .background(.linearGradient(gradientBackround, startPoint: .leading, endPoint: .trailing))
+
                 }
-                .onAppear(perform: viewVM.countryData)
+               
             }
-            .padding(.horizontal)
-            .cornerRadius(8)
+            .background(.linearGradient(gradient, startPoint: .leading, endPoint: .topTrailing))
+            .onAppear(perform: viewVM.countryData)
+            
             HStack {
-                DatePicker("From Date : ",selection: $viewModel.startDate, in: viewModel.dateRange, displayedComponents: .date)
+                DatePicker("From Date : ", selection: $viewModel.startDate, in: viewModel.dateRange, displayedComponents: .date)
+                Spacer()
                 DatePicker("End Date: ", selection: $viewModel.endDate, in: viewModel.dateRange, displayedComponents: .date)
             }
-            Button(action: {
-                print("Button action")
-                self.filterHoliday = viewModel.dateFilter()
-            })
-            {
+            .background(.linearGradient(gradientBackround, startPoint: .leading, endPoint: .trailing))
+            Button {
+                viewModel.setFilterData()
+            } label: {
                 Text("Update Search")
                     .padding(10.0)
                     .foregroundColor(.black)
@@ -97,58 +101,70 @@ struct ContentView: View {
                             .frame(minWidth: 0,maxWidth: .infinity)
                     )
             }
+            .background(.linearGradient(gradientBackround, startPoint: .leading, endPoint: .trailing))
             .cornerRadius(4)
             
             List {
-                ForEach(filterHoliday, id: \.date) { holiday in
-                    Text("Country Name : ")
-                        .foregroundColor(.black)
-                    +
-                    Text(viewVM.countryName)
-                        .foregroundColor(.blue)
-                    
-                    Text("Country Code : ")
-                        .foregroundColor(.black)
-                    +
-                    Text(holiday.countryCode)
-                        .foregroundColor(.blue)
-                    Text("Holiday : ")
-                        .foregroundColor(.black)
-                    
-                    + Text(holiday.name)
-                        .foregroundColor(.blue)
-                    
-                    Text("Local Name : ")
-                        .foregroundColor(.black)
-                    
-                    + Text(holiday.localName)
-                        .foregroundColor(.blue)
-                    
-                    Text("Date : ")
-                        .foregroundColor(.black)
-                    + Text("\(holiday.date)")
-                        .foregroundColor(.blue)
+                ForEach(viewModel.filterHoliday, id: \.date) { holiday in
+                    VStack(alignment: .leading,spacing: 10) {
+                        Text("Country Name : ")
+                            .foregroundColor(.black)
+                        +
+                        Text(viewVM.countryName.isEmpty ? "Autralia": viewVM.countryName )
+                            .foregroundColor(.blue)
+                        
+                        Text("Country Code : ")
+                            .foregroundColor(.black)
+                        +
+                        Text(holiday.countryCode)
+                            .foregroundColor(.blue)
+                        Text("Holiday : ")
+                            .foregroundColor(.black)
+                        
+                        + Text(holiday.name)
+                            .foregroundColor(.blue)
+                        
+                        Text("Local Name : ")
+                            .foregroundColor(.black)
+                        
+                        + Text(holiday.localName)
+                            .foregroundColor(.blue)
+                        
+                        Text("Date : ")
+                            .foregroundColor(.black)
+                        + Text("\(holiday.date)")
+                            .foregroundColor(.blue)
+                    }
                 }
+                .listRowBackground(Color.white)
+                .padding()
+
             }
-            .background(Color.purple)
+            .onAppear {
+                        UITableView.appearance().backgroundColor = .clear
+                    }
+                    .listStyle(.insetGrouped)
             .onReceive(viewModel.$getCountryCode, perform: { publisher in
-                self.isSelectCountryCode = publisher
+                self.selectCountryCode = publisher
                 print("onRecive CountryCode call to action")
+                viewModel.holidayData(years: viewModel.getYear, countyCode: selectCountryCode)
                 
             })
             .onReceive(viewModel.$getYear, perform: { publisher in
-                if(viewModel.getCountryCode.count == 2 && publisher.count == 4){
-                    viewModel.holidayData(years: publisher,countyCode: isSelectCountryCode)
+                if viewModel.getCountryCode.count == 2 {
+                    viewModel.holidayData(years: publisher,countyCode: selectCountryCode)
                     print("onRecive Year call to action")
-                    
                 }
                 
             })
-            .onAppear(perform: { viewModel.holidayData()
+            .onAppear(perform: {
+                viewModel.holidayData(years: viewModel.getYear)
                 print("Holiday data method holiday() call")
             })
             
         }
+        .background(.linearGradient(gradient, startPoint: .top, endPoint: .bottom))
+
     }
 }
 
