@@ -86,7 +86,9 @@ struct ContentView: View {
                 DatePicker("From Date : ", selection: $viewModel.startDate, in: viewModel.dateRange, displayedComponents: .date)
                 Spacer()
                 DatePicker("End Date: ", selection: $viewModel.endDate, in: viewModel.dateRange, displayedComponents: .date)
+                
             }
+            .border(Color.blue)
             .background(.linearGradient(gradientBackround, startPoint: .leading, endPoint: .trailing))
             Button {
                 viewModel.setFilterData()
@@ -112,7 +114,7 @@ struct ContentView: View {
                         +
                         Text(viewVM.countryName.isEmpty ? "Australia": viewVM.countryName )
                             .foregroundColor(.blue)
-                    
+                        
                         Text("Holiday :  ")
                             .foregroundColor(.black)
                         
@@ -129,10 +131,8 @@ struct ContentView: View {
                         
                         + Text("\(viewModel.dayOfWeek(date: holiday.date))")
                             .foregroundColor(.blue)
-                        
                     }
                 }
-                .listRowBackground(Color.white)
                 .padding()
                 
             }
@@ -140,7 +140,6 @@ struct ContentView: View {
             .onAppear {
                 UITableView.appearance().backgroundColor = .clear
             }
-            .listStyle(.insetGrouped)
             .onReceive(viewModel.$getCountryCode, perform: { publisher in
                 self.selectCountryCode = publisher
                 print("onRecive CountryCode call to action")
