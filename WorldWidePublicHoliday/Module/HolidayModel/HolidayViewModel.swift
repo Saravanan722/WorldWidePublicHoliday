@@ -10,7 +10,7 @@ import Combine
 
 class HolidayViewModel: ObservableObject {
     
-    @Published var getCountryCode: String = "Australia"
+    @Published var getCountryCode: String = ""
     @Published var getYear: Int = 2023
     private var resultHoliday: [HolidayResponse] = [] {
         didSet {
@@ -103,6 +103,19 @@ class HolidayViewModel: ObservableObject {
                 }
             }.resume()
         }
+    }
+    
+    func dateMyFormate(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        let result = dateFormatter.string(from: date)
+        return result
+    }
+    
+    func dayOfWeek(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        return dateFormatter.string(from: date).capitalized
     }
     
     func compareDate(date : Date) -> Bool {

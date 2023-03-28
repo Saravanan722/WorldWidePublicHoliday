@@ -41,12 +41,12 @@ struct ContentView: View {
                         .overlay(
                             RoundedRectangle(cornerRadius: 10.0)
                                 .stroke(lineWidth: 2.0)
-                                .shadow(color: .brown, radius: 10.0)
+                                .shadow(color: .purple, radius: 10.0)
                                 .frame(minWidth: 0,maxWidth: .infinity)
                         )
                     }
                     .background(.linearGradient(gradientBackround, startPoint: .leading, endPoint: .trailing))
-
+                    
                 }
                 Menu {
                     ForEach(2000...2030, id: \.self) { year in
@@ -70,14 +70,14 @@ struct ContentView: View {
                         .overlay(
                             RoundedRectangle(cornerRadius: 10.0)
                                 .stroke(lineWidth: 2.0)
-                                .shadow(color: .brown, radius: 10.0)
+                                .shadow(color: .purple, radius: 10.0)
                                 .frame(minWidth: 0,maxWidth: .infinity)
                         )
                     }
                     .background(.linearGradient(gradientBackround, startPoint: .leading, endPoint: .trailing))
-
+                    
                 }
-               
+                
             }
             .background(.linearGradient(gradient, startPoint: .leading, endPoint: .topTrailing))
             .onAppear(perform: viewVM.countryData)
@@ -107,43 +107,40 @@ struct ContentView: View {
             List {
                 ForEach(viewModel.filterHoliday, id: \.date) { holiday in
                     VStack(alignment: .leading,spacing: 10) {
-                        Text("Country Name : ")
+                        Text("Country : ")
                             .foregroundColor(.black)
                         +
-                        Text(viewVM.countryName.isEmpty ? "Autralia": viewVM.countryName )
+                        Text(viewVM.countryName.isEmpty ? "Australia": viewVM.countryName )
                             .foregroundColor(.blue)
-                        
-                        Text("Country Code : ")
-                            .foregroundColor(.black)
-                        +
-                        Text(holiday.countryCode)
-                            .foregroundColor(.blue)
-                        Text("Holiday : ")
+                    
+                        Text("Holiday :  ")
                             .foregroundColor(.black)
                         
                         + Text(holiday.name)
                             .foregroundColor(.blue)
                         
-                        Text("Local Name : ")
+                        Text("Date      :  ")
                             .foregroundColor(.black)
-                        
-                        + Text(holiday.localName)
+                        + Text("\(viewModel.dateMyFormate(date:holiday.date))")
                             .foregroundColor(.blue)
                         
-                        Text("Date : ")
+                        Text("Day       :  ")
                             .foregroundColor(.black)
-                        + Text("\(holiday.date)")
+                        
+                        + Text("\(viewModel.dayOfWeek(date: holiday.date))")
                             .foregroundColor(.blue)
+                        
                     }
                 }
                 .listRowBackground(Color.white)
                 .padding()
-
+                
             }
+            .background(.linearGradient(gradient, startPoint: .top, endPoint: .bottom))
             .onAppear {
-                        UITableView.appearance().backgroundColor = .clear
-                    }
-                    .listStyle(.insetGrouped)
+                UITableView.appearance().backgroundColor = .clear
+            }
+            .listStyle(.insetGrouped)
             .onReceive(viewModel.$getCountryCode, perform: { publisher in
                 self.selectCountryCode = publisher
                 print("onRecive CountryCode call to action")
@@ -164,7 +161,7 @@ struct ContentView: View {
             
         }
         .background(.linearGradient(gradient, startPoint: .top, endPoint: .bottom))
-
+        
     }
 }
 

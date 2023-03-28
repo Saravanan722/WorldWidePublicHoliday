@@ -6,5 +6,6 @@
         <page name='DataFlow_in_SwiftUI'/>
         <page name='ClosureDemo'/>
         <page name='FunctionDemo'/>
+        <page name='CaseItreble'/>
     </pages>
 </playground>
