@@ -48,6 +48,10 @@ struct ContentView: View {
                     .background(.linearGradient(gradientBackround, startPoint: .leading, endPoint: .trailing))
                     
                 }
+                .cornerRadius(10)
+                .padding(4)
+                
+                
                 Menu {
                     ForEach(2000...2030, id: \.self) { year in
                         Button(String(year)) {
@@ -77,19 +81,23 @@ struct ContentView: View {
                     .background(.linearGradient(gradientBackround, startPoint: .leading, endPoint: .trailing))
                     
                 }
+                .cornerRadius(10)
                 
             }
+            .padding(4)
             .background(.linearGradient(gradient, startPoint: .leading, endPoint: .topTrailing))
             .onAppear(perform: viewVM.countryData)
             
             HStack {
-                DatePicker("From Date : ", selection: $viewModel.startDate, in: viewModel.dateRange, displayedComponents: .date)
+                DatePicker("From:", selection: $viewModel.startDate, in: viewModel.dateRange, displayedComponents: .date)
                 Spacer()
-                DatePicker("End Date: ", selection: $viewModel.endDate, in: viewModel.dateRange, displayedComponents: .date)
+                DatePicker("End:",selection: $viewModel.endDate, in: viewModel.dateRange, displayedComponents: .date)
                 
             }
-            .border(Color.blue)
             .background(.linearGradient(gradientBackround, startPoint: .leading, endPoint: .trailing))
+            .border(Color.blue)
+            .padding(4.0)
+
             Button {
                 viewModel.setFilterData()
             } label: {
@@ -104,7 +112,7 @@ struct ContentView: View {
                     )
             }
             .background(.linearGradient(gradientBackround, startPoint: .leading, endPoint: .trailing))
-            .cornerRadius(4)
+            .cornerRadius(10)
             
             List {
                 ForEach(viewModel.filterHoliday, id: \.date) { holiday in
@@ -136,6 +144,7 @@ struct ContentView: View {
                 .padding()
                 
             }
+            .listStyle(.insetGrouped)
             .background(.linearGradient(gradient, startPoint: .top, endPoint: .bottom))
             .onAppear {
                 UITableView.appearance().backgroundColor = .clear
