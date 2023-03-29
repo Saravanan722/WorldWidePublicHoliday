@@ -88,10 +88,10 @@ struct ContentView: View {
             .background(.linearGradient(gradient, startPoint: .leading, endPoint: .topTrailing))
             .onAppear(perform: viewVM.countryData)
             
-            HStack {
-                DatePicker("From:", selection: $viewModel.startDate, in: viewModel.dateRange, displayedComponents: .date)
+            HStack(spacing: 5) {
+                DatePicker("From", selection: $viewModel.startDate, in: viewModel.dateRange, displayedComponents: .date)
                 Spacer()
-                DatePicker("End:",selection: $viewModel.endDate, in: viewModel.dateRange, displayedComponents: .date)
+                DatePicker("End",selection: $viewModel.endDate, in: viewModel.dateRange, displayedComponents: .date)
                 
             }
             .background(.linearGradient(gradientBackround, startPoint: .leading, endPoint: .trailing))
